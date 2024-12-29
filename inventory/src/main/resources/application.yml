@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: inventory-server
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  # URL of the Eureka server
+  instance:
+    hostname: localhost  # Optionally set the hostname of the microservice
+    preferIpAddress: true  # Optionally use IP address for registration

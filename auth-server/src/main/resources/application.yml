@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: auth-server
+  
+
+datasource:
+    url: jdbc:mysql://localhost:3306/nmi_biz_track   # Replace with your MySQL database URL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Pa$$@123    
+
+eureka:
+  client:
+     serviceUrl:
+       defaultZone: http://localhost:8761/eureka/      
+ 
+  
+jpa:
+    hibernate:
+      ddl-auto: update            # Options: create, create-drop, update, none
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+
+ 
