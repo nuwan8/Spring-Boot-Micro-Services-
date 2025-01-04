@@ -31,7 +31,6 @@ public class GatewayConfig {
     
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
-        System.out.println("AAAA");
       return builder.routes()
                 // First route based on path matching                
                 .route(r -> r.path("/modules")

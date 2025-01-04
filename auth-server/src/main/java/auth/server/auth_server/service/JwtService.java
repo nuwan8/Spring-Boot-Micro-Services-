@@ -15,7 +15,7 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtService {
 
-   public static final String SECRET = "198804131988041320232024";
+   public static final String SECRET = "19880413A345AB23";
 
 
     public void validateToken(final String token) {

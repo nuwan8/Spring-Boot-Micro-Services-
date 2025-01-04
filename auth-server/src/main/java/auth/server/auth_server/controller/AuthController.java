@@ -44,10 +44,9 @@ public class AuthController {
         
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+  
     @PostMapping("/token")
     public String getToken(@RequestBody AuthRequest authRequest) {
-        System.out.println("COntrooler");
         Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
         if (authenticate.isAuthenticated()) {
             return service.generateToken(authRequest.getUsername());

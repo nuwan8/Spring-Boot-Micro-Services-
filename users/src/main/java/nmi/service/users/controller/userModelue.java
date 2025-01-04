@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import nmi.service.users.controller.userModelue;
@@ -13,7 +14,7 @@ import nmi.service.users.service.UserServiceImpl;
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 public class userModelue {
 
     @Autowired
@@ -22,14 +23,16 @@ public class userModelue {
     @Autowired
     private ModuleServiceImpl moduleServiceImpl;
 
-    @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/user")
+   
+    
+      @GetMapping("/list")
     public List getAllUserList(){
        return  serviceImpl.getAllUserList();
         // return "hello";
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+
+
      @GetMapping("/modules")
     public List getAllModulesList(){
        return  moduleServiceImpl.getAllModules();

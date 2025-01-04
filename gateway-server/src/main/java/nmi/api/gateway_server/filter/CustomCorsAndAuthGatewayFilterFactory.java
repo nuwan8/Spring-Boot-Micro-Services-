@@ -52,6 +52,7 @@ public class CustomCorsAndAuthGatewayFilterFactory
 
                 // Validate the JWT token
                 try {
+                    System.out.println("findlast");
                     jwtUtil.validateToken(authHeader);
                 } catch (Exception e) {
                     return Mono.error(new RuntimeException("Unauthorized access: Invalid token"));

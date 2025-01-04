@@ -16,13 +16,21 @@ public class JwtUtil {
 
 
     public void validateToken(final String token) {
+        System.out.println(token);
+        System.out.println(getSignKey());
         Jwts.parserBuilder().setSigningKey(getSignKey()).build().parseClaimsJws(token);
     }
 
 
 
     private Key getSignKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
+        
+         byte[] keyBytes = Decoders.BASE64.decode(SECRET);
+
+         if (keyBytes.length < 32) {
+            // If the key is too short, pad it with zeros or hash it to make it 32 bytes
+            keyBytes = java.util.Arrays.copyOf(keyBytes, 32);
+        }
         return Keys.hmacShaKeyFor(keyBytes);
     }
     
